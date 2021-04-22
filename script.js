@@ -31,7 +31,7 @@ hitButton.addEventListener("click", function () {
 });
 
 healButton.addEventListener("click", function(){
-  let heal = Number(healInput.value) 
+  let heal = Number(healInput.value) *4
   health = Math.max(0, health + heal)
   updateHeartsDisplay();
 });
