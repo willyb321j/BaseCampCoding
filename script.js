@@ -4,6 +4,9 @@ const hitButton = controlsContainer.querySelector("#hit-button");
 const hitDamageInput = controlsContainer.querySelector("#hit-damage-input");
 const healButton = controlsContainer.querySelector("#heal-button");
 const healInput = controlsContainer.querySelector("#heal-amount-input");
+const addHeartButton = controlsContainer.querySelector("#add-heart-container-button");
+
+
 let health = 35;
 let maxHealth = 40;
 
@@ -35,3 +38,14 @@ healButton.addEventListener("click", function(){
   health = Math.max(0, health + heal)
   updateHeartsDisplay();
 });
+addHeartButton.addEventListener("click", function(){
+  heartsContainer.insertAdjacentHTML('beforeend', 
+  `<div class="heart" data-quarters="0">
+    <div class="top-left"></div>
+    <div class="top-right"></div>
+    <div class="bottom-left"></div>
+    <div class="bottom-right"></div>
+  </div>`);
+    maxHealth += 4;
+    updateHeartsDisplay();
+  });
